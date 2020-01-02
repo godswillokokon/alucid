@@ -6,13 +6,12 @@ auth.onAuthStateChanged(user => {
   }
 });
 //login
-const loginForm = document.querySelector("#login-form");
+const loginForm = document.querySelector(".form-auth-small");
 loginForm.addEventListener("submit", e => {
   e.preventDefault();
   //get user info
-  const email = loginForm["login-email"].value;
-  const password = loginForm["login-password"].value;
-  // const displayName = signupForm["login-name"].value;
+  const email = loginForm["signin-email"].value;
+  const password = loginForm["signin-password"].value;
 
   auth
     .signInWithEmailAndPassword(email, password)
@@ -35,13 +34,8 @@ loginForm.addEventListener("submit", e => {
         "user",
         firebase.auth().currentUser
       );
-      const RegNum = document.querySelector("#login-regnum");
 
-      let regNum = RegNum.value;
-      console.log(regNum);
-      let regNumSession = sessionStorage.setItem("regnum", regNum);
-      // console.log(cred.user);
-      location.href = "student-edit-account.html";
+      location.href = "./index.html";
     })
     .catch(err => {
       console.log(err);

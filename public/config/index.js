@@ -1,4 +1,3 @@
-// Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyDvp9mfJaNMFnqcGIpfGuHFSxaznbVkSfI",
   authDomain: "alucid-39d39.firebaseapp.com",
@@ -12,9 +11,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
-// // make auth and firestore refrences
-// const auth = firebase.auth();
-// const db = firebase.firestore();
-// const functions = firebase.functions();
-
+// make auth and firestore refrences
+const auth = firebase.auth();
+const db = firebase.firestore();
+const functions = firebase.functions();

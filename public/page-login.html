@@ -2,7 +2,6 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.wrraptheme.com/templates/lucid/hospital/dark/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 00:50:51 GMT -->
 
 <head>
     <title>:: Lucid Hospital :: Login</title>
@@ -22,6 +21,17 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/color_skins.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+    <script src="./config/index.js"></script>
 </head>
 
 <body class="theme-cyan">
@@ -72,6 +82,6 @@
     <!-- END WRAPPER -->
 </body>
 
-<!-- Mirrored from www.wrraptheme.com/templates/lucid/hospital/dark/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 00:50:51 GMT -->
+<script src="./scripts/login.js"></script>
 
 </html>

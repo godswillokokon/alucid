@@ -47,10 +47,10 @@ signupForm.addEventListener("submit", e => {
         });
 
       console.log(cred.user);
-     
 
-  
-      // location.href = "student-edit-account.html";
+
+
+      location.href = "./index.html";
     })
     .catch(err => {
       console.log(err);
@@ -68,23 +68,3 @@ function logout() {
   });
   console.log("am logging out");
 }
-
-// function _updateUser() {
-//   const RegNum = document.querySelector("#signup-regnum");
-
-//   var userNow = firebase.auth().currentUser;
-//   userNow
-//     .updateProfile({
-//       displayName: RegNum
-//     })
-//     .then(
-//       function() {
-//         var displayName = userNow.displayName;
-
-//         console.log(displayName);
-//       },
-//       function(error) {
-//         console.log(error);
-//       }
-//     );
-// }
