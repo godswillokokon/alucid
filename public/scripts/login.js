@@ -25,7 +25,49 @@ loginForm.addEventListener("submit", e => {
           console.log(currentUsers, "user");
 
           console.log(idToken, "token");
-          console.log(currentUser, "session");
+          db.collection("users")
+
+            .where("email", "==", email)
+            .onSnapshot(
+              doc => {
+                let data = doc.docs;
+                data.forEach(data => {
+                  let id = data.id;
+                  let actualData = data.data()
+                  let email = data.data().email;
+                  let role = data.data().role;
+                  let username = data.data().username;
+                  console.log(data.data().username, "bvb");
+
+                  let currentUserRole = sessionStorage.setItem(
+                    "role",
+                    data.data().role
+                  );
+                  let currentUserName = sessionStorage.setItem(
+                    "name",
+                    data.data().username
+                  );
+                  let currentUserEmail = sessionStorage.setItem(
+                    "mail",
+                    data.data().email
+                  );
+
+
+                });
+
+
+              },
+              err => {
+                console.log(err);
+              }
+            );
+
+          let currentUserID = sessionStorage.setItem(
+            "id",
+            currentUsers.l
+          );
+
+
         })
         .catch(function (error) {
           console.log(error);
@@ -34,6 +76,7 @@ loginForm.addEventListener("submit", e => {
         "user",
         firebase.auth().currentUser
       );
+
 
       location.href = "./index.html";
     })

@@ -32,6 +32,12 @@ signupForm.addEventListener("submit", e => {
           // console.log(idToken);
           // Send token to your backend via HTTPS
           // setupUI(cred);
+          let currentUsers = firebase.auth().currentUser;
+          let currentUserID = sessionStorage.setItem(
+            "id",
+            currentUsers.l
+          );
+          console.log(currentUserID, "id")
 
           return db
             .collection("users")

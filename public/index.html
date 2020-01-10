@@ -2,9 +2,8 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.wrraptheme.com/templates/lucid/hospital/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 00:48:20 GMT -->
 <head>
-<title>:: Lucid Hospital :: Home</title>
+<title>:: Alucid :: Home</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -23,6 +22,17 @@
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/color_skins.css">
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-functions.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+<script src="./config/index.js"></script>
 </head>
 <body class="theme-cyan">
 
@@ -155,7 +165,7 @@
                 <img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
                 <div class="dropdown">
                     <span>Welcome,</span>
-                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>Dr. Chandler Bing</strong></a>
+                    <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"></a>
                     <ul class="dropdown-menu dropdown-menu-right account">
                         <li><a href="doctor-profile.html"><i class="icon-user"></i>My Profile</a></li>
                         <li><a href="app-inbox.html"><i class="icon-envelope-open"></i>Messages</a></li>
@@ -201,9 +211,7 @@
                             <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user-follow"></i><span>Doctors</span> </a>
                                 <ul>
                                     <li><a href="doctors-all.html">All Doctors</a></li>
-                                    <li><a href="doctor-add.html">Add Doctor</a></li>
-                                    <li><a href="doctor-profile.html">Doctor Profile</a></li>
-                                    <li><a href="doctor-events.html">Doctor Schedule</a></li>
+                                   
                                 </ul>
                             </li>
                             <li><a href="javascript:void(0);" class="has-arrow"><i class="icon-user"></i><span>Patients</span> </a>
@@ -834,162 +842,6 @@
                 </div>
             </div>
 
-            <div class="row clearfix">
-                <div class="col-lg-6 col-md-12">
-                    <div class="row clearfix">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card">
-                                <div class="header">
-                                    <h2>Patient history</h2>
-                                    <ul class="header-dropdown">
-                                        <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Weekly">W</a></li>
-                                        <li><a class="tab_btn" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Monthly">M</a></li>
-                                        <li><a class="tab_btn active" href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Yearly">Y</a></li>
-                                        <li class="dropdown">
-                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="javascript:void(0);">Action</a></li>
-                                                <li><a href="javascript:void(0);">Another Action</a></li>
-                                                <li><a href="javascript:void(0);">Something else</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="body">
-                                    <div id="patient_history" class="chartist"></div>
-                                </div>
-                            </div>
-                        </div>                        
-                        <div class="col-lg-12 col-md-12">
-                            <div class="card">
-                                <div class="header">
-                                    <h2>Recent Chat</h2>
-                                    <ul class="header-dropdown">
-                                        <li class="dropdown">
-                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
-                                            <ul class="dropdown-menu dropdown-menu-right">
-                                                <li><a href="javascript:void(0);">Action</a></li>
-                                                <li><a href="javascript:void(0);">Another Action</a></li>
-                                                <li><a href="javascript:void(0);">Something else</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="body text-center">
-                                    <div class="cwidget-scroll">
-                                        <ul class="chat-widget m-r-5 clearfix">
-                                            <li class="left float-left">
-                                                <img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                                                <div class="chat-info">       
-                                                    <span class="message">Hello, John<br>What is the update on Project X?</span>
-                                                </div>
-                                            </li>
-                                            <li class="right">
-                                                <img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                                                <div class="chat-info">
-                                                    <span class="message">Hi, Chandler<br> It is almost completed. I will send you an email later today.</span>
-                                                </div>
-                                            </li>
-                                            <li class="left float-left">
-                                                <img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/xs/avatar2.jpg" class="rounded-circle" alt="">
-                                                <div class="chat-info">
-                                                    <span class="message">That's great. Will catch you in evening.</span>
-                                                </div>
-                                            </li>
-                                            <li class="right">
-                                                <img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/xs/avatar1.jpg" class="rounded-circle" alt="">
-                                                <div class="chat-info">
-                                                    <span class="message">Sure we'will have a blast today.</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="input-group p-t-15">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><i class="icon-paper-plane"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Enter text here...">                                    
-                                    </div>                            
-                                </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Hospital Activities</h2>
-                        </div>
-                        <div class="body">
-                            <div class="timeline-item green">
-                                <span class="date">20-04-2018 - Today</span>
-                                <h5>A Brief History Of Anesthetics</h5>
-                                <span><a href="javascript:void(0);">Elisse Joson</a> San Francisco, CA</span>
-                                <div class="msg">
-                                    <p>I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things.</p>
-                                    <a href="javascript:void(0);" class="m-r-20"><i class="icon-heart"></i> Like</a>
-                                    <a role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="icon-bubbles"></i> Comment</a>
-                                    <div class="collapse m-t-10" id="collapseExample">
-                                        <div class="well">
-                                            <form>
-                                                <div class="form-group">
-                                                    <textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
-                                                </div>
-                                                <button class="btn btn-primary">Submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>                                
-                            </div>
-
-                            <div class="timeline-item blue">
-                                <span class="date">19-04-2018 - Yesterday</span>
-                                <h5>Using Laser Teatment to Help</h5>
-                                <span><a href="javascript:void(0);" title="">Katherine Lumaad</a> Oakland, CA</span>
-                                <div class="msg">
-                                    <p>web by far While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.</p>
-                                    <div class="timeline_img m-b-20">
-                                        <img class="w-25" src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/blog/blog-page-4.jpg" alt="Awesome Image">
-                                        <img class="w-25" src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/blog/blog-page-2.jpg" alt="Awesome Image">
-                                    </div>
-                                    <a href="javascript:void(0);" class="m-r-20"><i class="icon-heart"></i> Like</a>
-                                    <a role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"><i class="icon-bubbles"></i> Comment</a>
-                                    <div class="collapse m-t-10" id="collapseExample1">
-                                        <div class="well">
-                                            <form>
-                                                <div class="form-group">
-                                                    <textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
-                                                </div>
-                                                <button class="btn btn-primary">Submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item warning pb-0">
-                                <span class="date">21-02-2018</span>
-                                <h5>Selecting the right Apnea Treatment</h5>
-                                <span><a href="javascript:void(0);" title="">Gary Camara</a> San Francisco, CA</span>
-                                <div class="msg">
-                                    <p>I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, is the Lorem card.</p>
-                                    <a href="javascript:void(0);" class="m-r-20"><i class="icon-heart"></i> Like</a>
-                                    <a role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"><i class="icon-bubbles"></i> Comment</a>
-                                    <div class="collapse m-t-10" id="collapseExample2">
-                                        <div class="well">
-                                            <form>
-                                                <div class="form-group">
-                                                    <textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
-                                                </div>
-                                                <button class="btn btn-primary">Submit</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
@@ -1116,5 +968,6 @@
 <script src="assets/js/index.js"></script>
 </body>
 
-<!-- Mirrored from www.wrraptheme.com/templates/lucid/hospital/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Dec 2019 00:50:06 GMT -->
+<script src="./scripts/auth.js"></script>
+<script src="./scripts/index.js"></script>
 </html>
