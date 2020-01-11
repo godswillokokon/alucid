@@ -24,8 +24,6 @@ addPatients.addEventListener("submit", e => {
       email,
       description
     })
-
-
     .catch(err => {
       console.error(err);
     });
