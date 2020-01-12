@@ -54,27 +54,27 @@ db.collection("patients")
     PdateCreated.innerHTML = htmlPdate;
 
     const htmlPemail = `
-      ${Pemail}
+      ${email}
       `;
     Pemail.innerHTML = htmlPemail;
 
     const htmlPmobile = `
-      ${Pmobile}
+      ${mobile}
       `;
     Pmobile.innerHTML = htmlPmobile;
 
     const htmlPage = `
-        ${Page}
+        ${age}
       `;
     Page.innerHTML = htmlPage;
 
     const htmlPsex = `
-       ${Psex}
+       ${sex}
       `;
     Psex.innerHTML = htmlPsex;
 
     const htmlPreport = `
-        <div>${Preport}</div>
+        <div>${description}</div>
       `;
     Preport.innerHTML = htmlPreport;
 

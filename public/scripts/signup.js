@@ -37,7 +37,7 @@ signupForm.addEventListener("submit", e => {
             "id",
             currentUsers.l
           );
-          console.log(currentUserID, "id")
+
 
           return db
             .collection("users")
@@ -52,7 +52,19 @@ signupForm.addEventListener("submit", e => {
           console.log(error);
         });
 
-      console.log(cred.user);
+      let currentUserRole = sessionStorage.setItem(
+        "role",
+        role
+      );
+      let currentUserName = sessionStorage.setItem(
+        "name",
+        username
+      );
+      let currentUserEmail = sessionStorage.setItem(
+        "mail",
+        email
+      );
+
 
 
 
