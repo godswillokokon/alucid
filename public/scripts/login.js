@@ -37,19 +37,19 @@ loginForm.addEventListener("submit", e => {
                   let email = data.data().email;
                   let role = data.data().role;
                   let username = data.data().username;
-                  console.log(data.data().username, "bvb");
 
                   let currentUserRole = sessionStorage.setItem(
                     "role",
-                    data.data().role
+                    role
                   );
+
                   let currentUserName = sessionStorage.setItem(
                     "name",
-                    data.data().username
+                    username
                   );
                   let currentUserEmail = sessionStorage.setItem(
                     "mail",
-                    data.data().email
+                    email
                   );
 
 
@@ -59,26 +59,27 @@ loginForm.addEventListener("submit", e => {
               },
               err => {
                 console.log(err);
-              }
-            );
+              });
 
           let currentUserID = sessionStorage.setItem(
             "id",
             currentUsers.l
           );
+          let currentUser = sessionStorage.setItem(
+            "user",
+            firebase.auth().currentUser
+          );
 
 
+          location.href = "./index.html";
         })
         .catch(function (error) {
           console.log(error);
         });
-      let currentUser = sessionStorage.setItem(
-        "user",
-        firebase.auth().currentUser
-      );
 
 
-      location.href = "./index.html";
+
+
     })
     .catch(err => {
       console.log(err);

@@ -1,19 +1,20 @@
 const accountDetails = document.querySelector(".user-name");
 
-let UserName = sessionStorage.getItem("name");
+let UserNamee = sessionStorage.getItem("name");
 
-let UserRole = sessionStorage.getItem("role");
-console.log(UserRole, "role");
+let UserRolee = sessionStorage.getItem("role");
 
-if (UserRole == 'doctor' || UserRole == 'Dr') {
+console.log(UserRolee, "role");
+
+if (UserRolee == 'doctor' || UserRolee == 'Dr') {
   const html = `
-         <strong>Dr. ${UserName}</strong>
+         <strong>Dr. ${UserNamee}</strong>
       `;
 
   accountDetails.innerHTML = html;
 } else {
   const html = `
-         <strong>Pharm. ${UserName}</strong>
+         <strong>Pharm. ${UserNamee}</strong>
       `;
 
   accountDetails.innerHTML = html;
