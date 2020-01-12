@@ -23,7 +23,7 @@ const PsetupContent = data => {
          <td>${Pemail}</td>
          <td>${Pmobile}</td>
          <td>${Pdate}</td>
-         <td><button type="button" class="btn btn-danger"><i class="fa fa-medkit"></i> </button></td>
+         <td><a href="./patient-profile.html?${Pid}" ><button type="button" class="btn btn-danger"><i class="fa fa-medkit"></i> </button> </a></td>
        </tr>
     `;
     html += div;

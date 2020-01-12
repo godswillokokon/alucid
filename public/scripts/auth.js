@@ -1,20 +1,20 @@
 
 
 let currentUserID = sessionStorage.getItem("id");
-console.log(currentUserID, "id");
+
 
 let currentUserRole = sessionStorage.getItem("role");
-console.log(currentUserRole, "role");
+
 
 let currentUserEmail = sessionStorage.getItem("email");
-console.log(currentUserEmail, "email");
+
 
 let currentUserName = sessionStorage.getItem("name");
-console.log(currentUserName, "name");
+
 
 
 if (!currentUserID) {
-  location.href = "./index.html";
+  location.href = "./page-login.html";
   console.log("not logged in from auth");
 } else {
 
