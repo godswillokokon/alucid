@@ -1,3 +1,18 @@
+let empty = null
+let currentUserRole = sessionStorage.setItem(
+  "role",
+  empty
+);
+
+let currentUserName = sessionStorage.setItem(
+  "name",
+  empty
+);
+let currentUserEmail = sessionStorage.setItem(
+  "mail",
+  empty
+);
+console.log("emptyn", currentUserEmail);
 auth.onAuthStateChanged(user => {
   if (user) {
     console.log("user logged in");
