@@ -14,7 +14,7 @@ const setupContent = data => {
                     <div class="card">
                         <div class="body text-center">
                             <div class="chart easy-pie-chart-1" data-percent="37"> <span><img src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/logo-icon.svg"" data-toggle="tooltip" data-placement="top" title="Dr. Avatar" alt="user" class="rounded-circle"/></span> </div>
-                            git
+                            <h6 class="mb-0">${Hname}</h6>
                             <small>${Hrole}</small>
                             <ul class="social-links list-unstyled">
                                 <li><a title="facebook" href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
