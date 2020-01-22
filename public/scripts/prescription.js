@@ -1,5 +1,6 @@
 const prescribe = document.querySelector(".prescribe");
 
+
 prescribe.addEventListener("submit", e => {
   e.preventDefault();
 
@@ -30,6 +31,8 @@ prescribe.addEventListener("submit", e => {
     .catch(err => {
       console.error(err);
     });
+
+
 
 });
 

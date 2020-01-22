@@ -51,6 +51,7 @@ loginForm.addEventListener("submit", e => {
                   let actualData = data.data()
                   let email = data.data().email;
                   let role = data.data().role;
+                  console.log(role, "role")
                   let username = data.data().username;
 
                   let currentUserRole = sessionStorage.setItem(
@@ -66,6 +67,14 @@ loginForm.addEventListener("submit", e => {
                     "mail",
                     email
                   );
+                  let currentUserID = sessionStorage.setItem(
+                    "id",
+                    currentUsers.l
+                  );
+                  let currentUser = sessionStorage.setItem(
+                    "user",
+                    firebase.auth().currentUser
+                  );
 
 
                 });
@@ -76,28 +85,26 @@ loginForm.addEventListener("submit", e => {
                 console.log(err);
               });
 
-          let currentUserID = sessionStorage.setItem(
-            "id",
-            currentUsers.l
-          );
-          let currentUser = sessionStorage.setItem(
-            "user",
-            firebase.auth().currentUser
-          );
 
 
-          location.href = "./index.html";
+
+
         })
         .catch(function (error) {
           console.log(error);
+          alert("Err :", error)
         });
 
 
+      setTimeout(function () {
+        location.href = "./index.html";
+      }, 5000);
 
 
     })
     .catch(err => {
       console.log(err);
+      alert("Err :", error)
     });
 });
 

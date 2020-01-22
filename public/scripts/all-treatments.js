@@ -1,5 +1,4 @@
-
-
+let nama = sessionStorage.getItem("name");
 const allTreated = document.querySelector(".allTreated");
 const PsetupContent = data => {
   let html = "";
@@ -33,11 +32,14 @@ const PsetupContent = data => {
     html += div;
   });
   allTreated.innerHTML = html;
+
+
 };
 
-db.collection("treatments")
+let treat = db.collection("treatments")
   //.orderBy("dateCreated", "asc")
-  // .where("courseLevel", "<=", level)
+
+  //treat.where("Pharm",  "==", nama)
   .onSnapshot(
     doc => {
       let data = doc.docs;
@@ -47,4 +49,5 @@ db.collection("treatments")
       console.log(err);
     }
   );
+
 
