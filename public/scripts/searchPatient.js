@@ -42,7 +42,7 @@ const PsetupContent = data => {
 
 db.collection("patients")
   .orderBy("dateCreated", "asc")
-  .where("fname", "==", pat)
+  .where("email", "==", pat)
   .onSnapshot(
     doc => {
       let data = doc.docs;
