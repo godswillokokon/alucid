@@ -13,7 +13,7 @@ let currentUserName = sessionStorage.getItem("name");
 
 
 
-if (!currentUserID) {
+if (!currentUserName) {
   location.href = "./page-login.html";
   console.log("not logged in from auth");
 } else {

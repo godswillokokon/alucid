@@ -83,6 +83,7 @@ loginForm.addEventListener("submit", e => {
               },
               err => {
                 console.log(err);
+                alert("Err :", err)
               });
 
 
@@ -103,8 +104,9 @@ loginForm.addEventListener("submit", e => {
 
     })
     .catch(err => {
+      alert("Err :", err.code)
       console.log(err);
-      alert("Err :", error)
+
     });
 });
 

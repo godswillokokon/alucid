@@ -35,6 +35,7 @@ const PsetupContent = data => {
 
 
 };
+let pat = sessionStorage.getItem("pat");
 
 let treat = db.collection("treatments")
   //.orderBy("dateCreated", "asc")

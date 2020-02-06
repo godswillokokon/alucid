@@ -2,9 +2,8 @@
 <html lang="en">
 
 
-
 <head>
-  <title>:: Lucid Hospital :: Patient Profile</title>
+  <title>:: Lucid Hospital ::</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -14,11 +13,12 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <!-- VENDOR CSS -->
   <link rel="stylesheet"
+    href="http://www.wrraptheme.com/templates/lucid/hospital/assets/vendor/fullcalendar/fullcalendar.min.css">
+  <link rel="stylesheet"
     href="http://www.wrraptheme.com/templates/lucid/hospital/assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet"
     href="http://www.wrraptheme.com/templates/lucid/hospital/assets/vendor/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet"
-    href="http://www.wrraptheme.com/templates/lucid/hospital/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+
 
   <!-- MAIN CSS -->
   <link rel="stylesheet" href="assets/css/main.css">
@@ -209,7 +209,8 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
           <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu">Menu</a></li>
-          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i class="icon-grid"></i></a></li>
+          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sub_menu"><i class="icon-grid"></i></a>
+          </li>
           <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Chat"><i class="icon-book-open"></i></a>
           </li>
           <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a>
@@ -237,7 +238,6 @@
 
                   </ul>
                 </li>
-
                 <li><a href="javascript:void(0);" class="has-arrow"><i class="fa fa-user-md"></i><span>Diagnosis</span>
                   </a>
                   <ul>
@@ -246,6 +246,7 @@
 
                   </ul>
                 </li>
+
 
 
 
@@ -305,17 +306,18 @@
         </div>
       </div>
     </div>
-    <div id="main-content" class="profilepage_1">
+
+    <div id="main-content">
       <div class="container-fluid">
         <div class="block-header">
           <div class="row">
             <div class="col-lg-6 col-md-8 col-sm-12">
               <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i
-                    class="fa fa-arrow-left"></i></a> Patient Profile</h2>
+                    class="fa fa-arrow-left"></i></a> All Patient</h2>
               <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
                 <li class="breadcrumb-item">Patient</li>
-                <li class="breadcrumb-item active">Patient Profile</li>
+                <li class="breadcrumb-item active">All Patient</li>
               </ul>
             </div>
             <div class="col-lg-6 col-md-4 col-sm-12 text-right">
@@ -345,77 +347,224 @@
         </div>
 
         <div class="row clearfix">
+          <div class="col-md-12">
+            <div class="card patients-list">
+              <div class="header">
+                <h2>Patients List</h2>
 
-          <div class="col-lg-12 col-md-12">
-            <div class="card">
+              </div>
+              <form id="navbar-search" class="navbar-form search-form searchP">
+                <input value="" class="form-control" id="pat" placeholder="Search Patient Here..." type="search">
+                <button type="submit" class="btn btn-default"><i class="icon-magnifier"></i></button>
+              </form>
               <div class="body">
-                <ul class="nav nav-tabs-new2">
-                  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#activity">Activity</a></li>
-
-                </ul>
-                <div class="tab-content mt-3">
-
-                  <div class="tab-pane active" id="activity">
-
-                    <div>
-                      <h6>Patient's History</h6>
-                      <table class="table billing-history">
-                        <thead class="sr-only">
-                          <tr>
-                            <th>Plan</th>
-                            <th>Amount</th>
-                            <th>Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>
-                              <label for="">Patient Name: </label>
-                              <h3 class="billing-title TPname" id="TPname">
-
-                              </h3>
-                              <br>
-                              <hr>
-                              <label for="">Drug(s) Name: </label>
-                              <span class="invoice-number TPdrugname" id="TPdrugname"></span>
-                              <br>
-                              <hr>
-                              <label for="">Patient Email: </label>
-                              <span class="text-muted TPemail" id="TPemail"></span>
-                              <br>
-                              <hr>
-                              <label for="">Dosage: </label>
-                              <span class="text-muted TPdosage" id="TPdosage"></span>
-                              <hr>
-                              <label for="">Patient ID: </label>
-                              <span class="invoice-number TPpatientID" id="TPpatientID"></span>
-                              <br>
-                              <hr>
-                              <label for="">Doctor's Name: </label>
-                              <span class="text-muted  TPdoc" id="TPdoc"></span>
-                              <br>
-                              <hr>
-                              <label for="">Date Treated: </label>
-                              <span class="text-muted TPdate" id="TPdate"></span>
-                              <hr>
-                              <label for="">Description: </label>
-                              <span class="text-muted TPinfo" id="TPinfo"></span>
-                            </td>
+                <!-- Nav tabs -->
 
 
-                          </tr>
+                <!-- Tab panes -->
+                <div class="tab-content m-t-10 padding-0">
+                  <div class="tab-pane table-responsive active show" id="All">
+                    <h2>Tuberculosis (TB)</h2>
+                    <table class="table m-b-0 table-hover">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>#</th>
+                          <th>Assess</th>
+                          <th>When to assess</th>
+
+                          <th>Note</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Symptoms
+                          </td>
+                          <td style=" width: 1px;">
+                            Every visit
+                          </td>
+                          <td>
+                            If respiratory rate > 25, breathless at rest or while talking,
+                            <br> confused/agitated, give
+                            urgent attention
+                            Expect gradual improvement on TB TREATMENT <br> .<strong>If symptoms worsen or do not
+                              improve
+                              refer <br> medical officer</strong>
+                          </td>
 
 
-                        </tbody>
-                      </table>
-                      <button type="submit" class="btn btn-primary treatment">Confirm</button>
-                      <button type="button" class="btn btn-outline-secondary">Cancel</button>
-                    </div>
+                        </tr>
 
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Family planning
+                          </td>
+                          <td style=" width: 1px;">
+                            Every visit
+                          </td>
+                          <td>
+                            Assess contraceptive needs to avoid pregnancy during treatment. <br>
+                            Avoid oral contraceptive and use subdermal implant with caution while on TB <br>
+                            treatment
+                          </td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Contacts
+                          </td>
+                          <td style=" width: 1px;">
+                            At diagnosis and <br> if contact symptomatic
+                          </td>
+                          <td>
+                            Screen symptomatic household and work contacts for TB
+                            Exclude TB and give 6 months IPT <br> to asymptomatic contacts < 5 years of age. </td> </tr>
+                              <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Adherence
+                          </td>
+                          <td style=" width: 1px;">
+                            Every visit
+                          </td>
+                          <td>
+                            Check adherence on TB card. <br>
+                            Manage the patient who interrupts TB treatment.
+                          </td>
+
+
+                        </tr>
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Side effects
+                          </td>
+                          <td style=" width: 1px;">
+                            Every visit
+                          </td>
+                          <td>
+                            Ask about side effects on treatment
+                          </td>
+
+
+                        </tr>
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            Chest x-ray
+                          </td>
+                          <td style=" width: 1px;">
+                            Not routinely, only if needed
+                          </td>
+                          <td>
+                            Arrange chest x-ray at 2 months if AFB and GeneXpert negative <br> and diagnosed on x-ray,
+                            patient deteriorates or coughs blood
+                          </td>
+
+
+                        </tr>
+
+                        <tr>
+                          <td style=" width: 1px;">#</td>
+                          <td style=" width: 1px;">
+                            HIV status
+                          </td>
+                          <td style=" width: 1px;">
+                            if status unknown
+                          </td>
+                          <td>
+                            if status unknown, test for HIV <br>
+                            if positive, give routine care and start ART <br>
+                            once tolerating TB treatment and ready for ART
+                          </td>
+
+
+                        </tr>
+
+
+
+                      </tbody>
+                    </table>
+                    <h4>Tuberculosis (TB) : Drugs</h4>
+                    <table class="table m-b-0 table-hover">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th></th>
+                          <th>Intensive Phase: 8 weeks</th>
+                          <th>Continuation Phase: 4 months</th>
+
+
+
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                        <tr>
+                          <td>Weight</td>
+                          <td>
+                            RHZE(150/75/400/275)
+                          </td>
+                          <td>
+                            RH
+                          </td>
+
+
+
+                        </tr>
+
+                        <tr>
+                          <td>30-37KG</td>
+                          <td>
+                            2 tablets
+                          </td>
+                          <td>
+                            2 tablets(150/75)
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>38-54KG</td>
+                          <td>
+                            3 tablets
+                          </td>
+                          <td>
+                            3 tablets(150/75)
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>55-70KG</td>
+                          <td>
+                            4 tablets
+                          </td>
+                          <td>
+                            2 tablets(150/75)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td> > 70KG</td>
+                          <td>
+                            5 tablets
+                          </td>
+                          <td>
+                            5 tablets(150/75)
+                          </td>
+                        </tr>
+
+
+
+
+
+                      </tbody>
+                    </table>
                   </div>
-
-
-
                 </div>
               </div>
             </div>
@@ -423,23 +572,18 @@
         </div>
       </div>
     </div>
-
   </div>
-
-  <!-- Javascript -->
+  <!--
+                              Javascript -->
   <script src="assets/bundles/libscripts.bundle.js"></script>
   <script src="assets/bundles/vendorscripts.bundle.js"></script>
-
-  <script
-    src="http://www.wrraptheme.com/templates/lucid/hospital/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
   <script src="assets/bundles/mainscripts.bundle.js"></script>
   <script src="./scripts/auth.js"></script>
   <script src="./scripts/index.js"></script>
-  <script src="./scripts/treatment.js"></script>
-  <script src="./scripts/searchResults.js"></script>
+  <script src="./scripts/all-patients.js"></script>
   <script src="./scripts/search.js"></script>
-
+  <script src="./scripts/searchP.js"></script>
 </body>
 
 

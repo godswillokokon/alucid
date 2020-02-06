@@ -17,7 +17,7 @@ const PsetupContent = data => {
     const div = `
         <tr>
          <td><span class="list-icon"><img class="patients-img" src="http://www.wrraptheme.com/templates/lucid/hospital/assets/images/logo-icon.svg" alt=""></span></td>
-         <td><span class="list-name">${Pid}</span></td>
+         <td><a href="./patient-treatment.html?${Pemail}" ><span class="list-name">${Pid}</span></a></td>
          <td>${Pfname} ${Plname}</td>
          <td>${Page}</td>
          <td>${Pemail}</td>
