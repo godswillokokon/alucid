@@ -14,6 +14,7 @@ prescribe.addEventListener("submit", e => {
   let PatientID = sessionStorage.getItem("currentPatientID");
 
   let Doc = sessionStorage.getItem("name");
+  let date = new Date;
 
   return db
     .collection("drugs")
@@ -26,7 +27,8 @@ prescribe.addEventListener("submit", e => {
       Patientname,
       Patientemail,
       PatientID,
-      Doc
+      Doc,
+      date
     })
     .catch(err => {
       console.error(err);

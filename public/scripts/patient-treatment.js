@@ -1,9 +1,14 @@
 // let maill = window.location.search.split("?")[1];
 // console.log(maill);
-let pat = sessionStorage.getItem("pat");
+// let pat = sessionStorage.getItem("pat");
+// console.log(pat)
+let pat = window.location.search.split("?")[1];
+
+console.log(pat)
 db
-  .collection("treatments")
-  //.where("Temail", "==", pat)
+  .collection("drugs")
+  .orderBy("dateTreated", "asc")
+  .where("Patientemail", "==", pat)
   .onSnapshot(
     doc => {
       let data = doc.docs;
@@ -20,12 +25,13 @@ const PsetupContentt = data => {
   data.forEach(data => {
 
     let Tid = data.id;
-    let Tfname = data.data().Tname;
-    let Tdname = data.data().Tdrugname;
-    let Temail = data.data().Temail;
-    let Tdose = data.data().Tdosage;
+    let Tfname = data.data().Patientname;
+    let Tdname = data.data().drugName;
+    let Temail = data.data().Patientemail;
+    let Tdose = data.data().dosage;
     let Tpharm = data.data().Pharm;
-    let Tdoc = data.data().Doctor;
+    let Tdoc = data.data().Doc;
+    let treated = data.data().dateTreated;
 
     console.log("Temail");
 
@@ -40,7 +46,7 @@ const PsetupContentt = data => {
                                             <td>${Tdose}</td>
                                             
                                             <td>
-                                            ${Tpharm}
+                                            ${treated}
                                             </td>
                                             <td>${Tdoc}</td>
                                         </tr>

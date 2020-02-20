@@ -1,6 +1,7 @@
 const showToken = document.querySelector(".prescribe");
 
 
+let PatientIDMail = sessionStorage.getItem("currentPatientemail");
 showToken.addEventListener("submit", e => {
 
   const show = document.querySelector(".token");
@@ -9,11 +10,13 @@ showToken.addEventListener("submit", e => {
     data.forEach(data => {
       let token = data.id;
       let mail = data.Patientemail
+      // console.log(mail);
+
 
       const div = `
         <form id="navbar-search" class="navbar-form search-form ">
                                             <input class="form-control" value="${token}" placeholder="Copy token here..." type="text">
-                                                <a href="mailto:${token}?Subject=TOKEN" target="_top  class="btn btn-default"><i class="icon-pencil"></i>Send</a>
+                                                <a href="mailto:${PatientIDMail}?Subject=${token}" target="_top  class="btn btn-default"><i class="icon-pencil"></i>Send</a>
                                     
                                         </form>
     `;
@@ -23,9 +26,10 @@ showToken.addEventListener("submit", e => {
   };
 
   db.collection("drugs")
-    .orderBy("dateTreated", "asc")
+    .orderBy("date", "asc")
     // .where("courseLevel", "<=", level)
     .limit(1)
+    .limitToLast(1)
     .onSnapshot(
       doc => {
         let data = doc.docs;
